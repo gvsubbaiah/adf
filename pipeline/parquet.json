@@ -1,0 +1,210 @@
+{
+	"name": "parquet",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "ls_target",
+							"type": "LinkedServiceReference"
+						},
+						"path": "tgt"
+					},
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Info",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "ls_target",
+								"type": "LinkedServiceReference"
+							},
+							"path": "tgt"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Card Type Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardTypeCode",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Type Full Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardTypeFullName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Issuing Bank",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IssuingBank",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardNumber",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Holder's Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardHoldersName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "CVV/CVV2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVV_CVV2",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Issue Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IssueDate",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Expiry Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ExpiryDate",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Billing Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BillingDate",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Card PIN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardPIN",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Credit Limit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CreditLimit",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "cc_records",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cc_parquet",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-10-31T07:00:09Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

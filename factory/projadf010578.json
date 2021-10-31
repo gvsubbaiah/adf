@@ -1,0 +1,17 @@
+{
+	"name": "projadf010578",
+	"properties": {
+		"globalParameters": {
+			"enviornment": {
+				"type": "string",
+				"value": "dev"
+			}
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "efffc985-6b63-4c14-93f1-0840b3f7e5d2",
+		"tenantId": "d532cfe4-976e-436b-93f3-db3eb81086ee"
+	}
+}
