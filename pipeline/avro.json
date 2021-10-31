@@ -38,6 +38,129 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Card Type Code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardTypeCode",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Type Full Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardTypeFullName",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Issuing Bank",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IssuingBank",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardNumber",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Card Holder's Name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Card oldersName",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CVV/CVV2",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CVV_CVV2",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Issue Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Issue_Date",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Expiry Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ExpiryDate",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Billing Date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BillingDate",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Card PIN",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CardPIN",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Credit Limit",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CreditLimit",
+									"physicalType": "String"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
