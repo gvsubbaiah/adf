@@ -1,0 +1,20 @@
+{
+	"name": "Avro",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "avro",
+				"folderPath": "tgt"
+			},
+			"avroCompressionCodec": "snappy"
+		},
+		"schema": {}
+	}
+}
